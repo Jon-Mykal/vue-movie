@@ -1,5 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import MovieList from '../views/movies/MovieList.vue'
+import Create from '../views/movies/Create.vue'
+import Details from '../views/movies/Details.vue'
+import Edit from '../views/movies/Edit.vue'
+import Delete from '../views/movies/Delete.vue'
 
 const routes = [
   {
@@ -14,6 +19,23 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/movies',
+    name: 'MovieList',
+    component: MovieList,
+    children: [
+      { path: '/create', name: 'MovieCreate', component: Create}
+    ]
+  },
+  {
+    path: '/movies/:id',
+    name: 'MovieDetails',
+    component: Details,
+    children: [
+      { path: '/edit', name: 'MovieEdit', component: Edit},
+      { path: '/delete', name: 'MovieDelete', component: Delete}
+    ]
   }
 ]
 
