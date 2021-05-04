@@ -1,5 +1,7 @@
 # vue-movie
-
+This is another of my learning projects with Vue
+where I attempt to do tutorials from other platforms using the 
+knowledge I've acquired about Vue from VueMastery courses
 ## Project setup
 ```
 npm install
