@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import MovieList from '../views/movies/MovieList.vue'
-import Create from '../views/movies/Create.vue'
+import MovieCreate from '../views/movies/Create.vue'
 import Details from '../views/movies/Details.vue'
 import Edit from '../views/movies/Edit.vue'
 import Delete from '../views/movies/Delete.vue'
@@ -23,18 +23,20 @@ const routes = [
   {
     path: '/movies',
     name: 'MovieList',
-    component: MovieList,
-    children: [
-      { path: '/create', name: 'MovieCreate', component: Create}
-    ]
+    component: MovieList
+  },
+  {
+    path: '/movies/create',
+    name: 'MovieCreate',
+    component: MovieCreate
   },
   {
     path: '/movies/:id',
     name: 'MovieDetails',
     component: Details,
     children: [
-      { path: '/edit', name: 'MovieEdit', component: Edit},
-      { path: '/delete', name: 'MovieDelete', component: Delete}
+      { path: 'edit', name: 'MovieEdit', component: Edit },
+      { path: 'delete', name: 'MovieDelete', component: Delete}
     ]
   }
 ]

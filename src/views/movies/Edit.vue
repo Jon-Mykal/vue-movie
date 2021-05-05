@@ -1,11 +1,12 @@
 <template>
     <div>
-
+        works
     </div>
 </template>
 
 <script>
 export default {
+    name: 'MovieEdit',
     setup () {
         
 
@@ -14,6 +15,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

@@ -4,7 +4,11 @@ export class Movie {
     releaseDate;
     genre;
     price;
-    constructor() {
-        
+    constructor(title, releaseDate, genre, price) {
+        this.id = 0;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.genre = genre;
+        this.price = price;
     }
 }
